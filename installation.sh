@@ -27,7 +27,8 @@ dnf groupinstall "Development Tools"
 #bash NVIDIA-Linux-x86_64-*
 #cd
 
-dnf install cmake gcc-c++ libX11-devel libXext-devel qt5-qtx11extras-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qttools-devel kf5-kwindowsystem-devel make procps-ng curl file git dnf install firefox zsh java-latest-openjdk-devel.x86_64 java-1.8.0-openjdk.x86_64 arduino celluloid youtube-dl ffmpeg PrusaSlicer kicad kicad-packages3d kicad-doc inkscape kdenlive rclone libreoffice audacity htop thunderbird
+dnf install cmake gcc-c++ libX11-devel libXext-devel qt5-qtx11extras-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qttools-devel kf5-kwindowsystem-devel make procps-ng curl file git dnf firefox zsh java-latest-openjdk-devel.x86_64 java-1.8.0-openjdk.x86_64 arduino youtube-dl PrusaSlicer kicad kicad-packages3d kicad-doc inkscape rclone libreoffice audacity htop thunderbird
+#Ne marche pas : Kdenlive, Celluloid, Ffmpeg
 
 rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" | tee -a /etc/yum.repos.d/vscodium.repo
