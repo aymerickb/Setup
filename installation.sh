@@ -48,4 +48,4 @@ cd /home/Cepadues/Source-Code/Anaconda/
 wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 
 dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/34/winehq.repo
-dnf install winehq-stable
+dnf install wine
