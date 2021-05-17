@@ -15,9 +15,9 @@ systemctl set-default graphical.target
 systemctl enable sddm
 
 dnf groupinstall "Development Tools"
-dnf install kernel-devel epel-release
-dnf install dkms
 
+#dnf install kernel-devel epel-release
+#dnf install dkms
 #mkdir /home/Cepadues/Source-Code/Nvidia/
 #cd /home/Cepadues/Source-Code/Nvidia/
 #wget https://us.download.nvidia.com/XFree86/Linux-x86_64/465.27/NVIDIA-Linux-x86_64-465.27.run
