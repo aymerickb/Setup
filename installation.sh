@@ -40,6 +40,7 @@ curl -1sLf \
 dnf install -y balena-etcher-electron   
 
 flatpak install flathub com.discordapp.Discord
+override --filesystem=home com.discordapp.Discord
 
 flatpak install flathub com.microsoft.Teams
 
