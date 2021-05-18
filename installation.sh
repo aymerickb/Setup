@@ -9,7 +9,7 @@ flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
 flatpak install flathub com.valvesoftware.Steam
 
 dnf install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps -y
-dnf install plasma-desktop kscreen sddm kde-gtk-config dolphin konsole kate -y
+dnf install plasma-desktop kscreen sddm-kcm kde-gtk-config dolphin konsole kate -y
 
 systemctl set-default graphical.target
 systemctl enable sddm
