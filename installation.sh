@@ -16,16 +16,7 @@ systemctl enable sddm
 
 dnf groupinstall "Development Tools"
 
-#dnf install kernel-devel epel-release
-#dnf install dkms
-#mkdir /home/Cepadues/Source-Code/Nvidia/
-#cd /home/Cepadues/Source-Code/Nvidia/
-#wget https://us.download.nvidia.com/XFree86/Linux-x86_64/465.27/NVIDIA-Linux-x86_64-465.27.run
-#set -o noclobber
-#echo 'GRUB_CMDLINE_LINUX="crashkernel=auto rhgb quiet nouveau.modeset=0"' >> /etc/default/grub
-#grub2-mkconfig -o /boot/efi/EFI/rocky/grub.cfg
-#bash NVIDIA-Linux-x86_64-*
-#cd
+
 
 dnf install cmake gcc-c++ libX11-devel libXext-devel qt5-qtx11extras-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qttools-devel kf5-kwindowsystem-devel make procps-ng curl file git dnf firefox zsh java-latest-openjdk-devel.x86_64 java-1.8.0-openjdk.x86_64 arduino youtube-dl PrusaSlicer kicad kicad-packages3d kicad-doc inkscape rclone libreoffice audacity htop thunderbird
 #Ne marche pas : Kdenlive, Celluloid, Ffmpeg
@@ -45,9 +36,4 @@ override --filesystem=home com.discordapp.Discord
 flatpak install flathub com.microsoft.Teams
 
 yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver
-mkdir /home/Cepadues/Source-Code/Anaconda/
-cd /home/Cepadues/Source-Code/Anaconda/
-wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 
-dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/34/winehq.repo
-dnf install wine
