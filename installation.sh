@@ -1,39 +1,49 @@
+# Update system
 dnf upgrade
+
+# Add repo
 dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
-dnf config-manager --set-enabled PowerTools
 
 dnf install flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
-flatpak install flathub com.valvesoftware.Steam
 
-dnf install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps -y
-dnf install plasma-desktop kscreen sddm-kcm kde-gtk-config dolphin konsole kate -y
-
-systemctl set-default graphical.target
-systemctl enable sddm
-
+# Install programing tools
 dnf groupinstall "Development Tools"
 
+# Libraries
+dnf install cmake gcc-c++ libX11-devel libXext-devel 
+# QT
+dnf install -y qt5-qtx11extras-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qttools-devel 
+# Arduino
+dnf install -y arduino 
+# VSCode
+rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+dnf install -y code
 
-
-dnf install cmake gcc-c++ libX11-devel libXext-devel qt5-qtx11extras-devel qt5-qtbase-devel qt5-qtsvg-devel qt5-qttools-devel kf5-kwindowsystem-devel make procps-ng curl file git dnf firefox zsh java-latest-openjdk-devel.x86_64 java-1.8.0-openjdk.x86_64 arduino youtube-dl PrusaSlicer kicad kicad-packages3d kicad-doc inkscape rclone libreoffice audacity htop thunderbird
-#Ne marche pas : Kdenlive, Celluloid, Ffmpeg
-
-rpm --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
-printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg" | tee -a /etc/yum.repos.d/vscodium.repo
-dnf install codium
+# Electronic
+dnf install -y PrusaSlicer kicad kicad-packages3d kicad-doc 
 
 curl -1sLf \
    'https://dl.cloudsmith.io/public/balena/etcher/setup.rpm.sh' \
    | -E bash
 dnf install -y balena-etcher-electron   
 
+# Art
+inkscape audacity
+# Office / Communication
+dnf install -y libreoffice thunderbird firefox 
+
 flatpak install flathub com.discordapp.Discord
 override --filesystem=home com.discordapp.Discord
 
 flatpak install flathub com.microsoft.Teams
 
-yum install libXcomposite libXcursor libXi libXtst libXrandr alsa-lib mesa-libEGL libXdamage mesa-libGL libXScrnSaver
+
+
+#Ne marche pas : Kdenlive, Celluloid, Ffmpeg
+
+
+
 
