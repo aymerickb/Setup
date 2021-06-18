@@ -49,7 +49,7 @@ flatpak install flathub com.microsoft.Teams
 # Utilities
 dnf install -y gnome-shell-extension-launch-new-instance.noarch
 dnf install -y gnome-shell-extension-gsconnect.x86_64
-
+dnf install -y neofetch
 
 dnf upgrade -y
 
