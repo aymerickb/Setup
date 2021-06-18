@@ -29,9 +29,7 @@ dnf install -y git-gui
 # Electronic
 dnf install -y PrusaSlicer kicad kicad-packages3d kicad-doc 
 
-curl -1sLf \
-   'https://dl.cloudsmith.io/public/balena/etcher/setup.rpm.sh' \
-   | -E bash
+curl -1sLf 'https://dl.cloudsmith.io/public/balena/etcher/setup.rpm.sh'  | sudo -E bash
 dnf install -y balena-etcher-electron   
 
 # Art
