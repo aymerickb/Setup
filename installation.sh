@@ -48,6 +48,8 @@ flatpak install -y flathub com.microsoft.Teams
 dnf install -y gnome-shell-extension-launch-new-instance.noarch
 dnf install -y gnome-shell-extension-gsconnect.x86_64
 dnf install -y neofetch
+sudo flatpak install -y flathub com.spotify.Client
+
 # Free file sync
 ffs=FreeFileSync_11.11_Linux.tar.gz
 wget https://freefilesync.org/download/$ffs
