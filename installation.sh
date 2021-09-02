@@ -1,5 +1,5 @@
 # Update system
-dnf upgrade
+dnf upgrade -y
 
 # Add repo
 dnf install -y --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -28,6 +28,9 @@ dnf install -y git-gui
 
 # Electronic
 dnf install -y PrusaSlicer kicad kicad-packages3d kicad-doc 
+
+# CAD
+dnf install -y freecad
 
 curl -1sLf 'https://dl.cloudsmith.io/public/balena/etcher/setup.rpm.sh'  | sudo -E bash
 dnf install -y balena-etcher-electron   
